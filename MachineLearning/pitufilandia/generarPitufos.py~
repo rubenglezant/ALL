@@ -1,0 +1,17 @@
+import random
+
+archi=open('datos.csv','w')
+archi.write('X,Y,COLOR\n')
+for x in range(20):
+    X = random.randrange(100)
+    Y = random.randrange(100)
+    archi.write(str(X))
+    archi.write(',')
+    archi.write(str(Y))
+    archi.write(',')
+    if (X > 50):
+	archi.write('0\n')
+    else:
+	archi.write('1\n')
+archi.close()
+

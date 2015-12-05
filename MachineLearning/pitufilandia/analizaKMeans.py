@@ -2,7 +2,6 @@
 
 from matplotlib import pyplot as plt
 from sklearn.datasets import load_iris
-import mlpy 
 from sklearn.cluster import KMeans
 import pandas as pd
 

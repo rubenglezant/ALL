@@ -17,10 +17,11 @@ def creaDatos(archi, num):
 	else:
 			archi.write('1\n')
 
-muestra = 200
-test = 10000
+muestra = 1000
+test = 50000
 
 print ('1.- Generacion de datos - Pitufos')
+print ('---------------------------------')
 
 archi=open('datos.csv','w')
 creaDatos(archi, muestra)
@@ -28,7 +29,7 @@ print ('Tamano de Muestra : '+str(muestra))
 archi.close()
 
 archi=open('test.csv','w')
-creaDatos(archi, 10000)
+creaDatos(archi, test)
 print ('Tamano de Test : '+str(test))
 archi.close()
 

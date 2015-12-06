@@ -4,8 +4,10 @@ import matplotlib.pyplot as plt
 from sklearn import tree, datasets
 from sklearn.externals import joblib
 from numpy import *
+from sklearn.metrics import classification_report
 
 print ('3.- Resultados del vector de prueba')
+print ('-----------------------------------')
 
 #Se importan los datos
 p = pd.read_csv('test.csv')
@@ -17,10 +19,6 @@ tree = joblib.load('maquinaDTC.pkl')
 
 # Verificamos el acierto con el grupo de test
 P = tree.predict(X_test)
-a = sum(P == y_test)
-b = y_test.shape[0]
-
-print ('Porcentaje de Acierto :'+str(a)+' / ' +str(b)+ ' => ' + str(float(a)/float(b)))
-
+print(classification_report(y_test, P))
 print ('')
 

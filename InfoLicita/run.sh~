@@ -1,0 +1,10 @@
+#!/bin/bash
+FILES=./*xls*
+echo > salida.txt
+for f in $FILES
+do
+  echo "Processing $f file..."
+  python excel.py > out.txt
+  python ajusta.py >> salida.txt
+done
+

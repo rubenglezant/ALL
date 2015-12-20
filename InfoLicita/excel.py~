@@ -1,7 +1,8 @@
 # Ejemplo de lectura de hoja Excel
 import xlrd
+import sys
 
-book = xlrd.open_workbook("IECISA - 181215 - TODO.xls")
+book = xlrd.open_workbook(sys.argv[1])
 #print "The number of worksheets is", book.nsheets
 #print "Worksheet name(s):", book.sheet_names()
 
@@ -9,12 +10,12 @@ sh = book.sheet_by_index(0)
 #print sh.name, sh.nrows, sh.ncols
 filas = sh.nrows
 cols = sh.ncols
-for x in range(1,cols):
+for x in range(1,filas):
 	s = "";
 	for y in range(cols):
 		try:
-			print (sh.cell_value(rowx=x, colx=y));
+			s += str(sh.cell_value(rowx=x, colx=y)) + "|";
 		except:
-			print ("");
-	print ("-----------------------");
+			s += ("") + "";
+	print (s);
 

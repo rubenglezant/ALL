@@ -1,0 +1,21 @@
+# Ejemplo de lectura de hoja Excel
+import xlrd
+import sys
+
+book = xlrd.open_workbook(sys.argv[1])
+#print "The number of worksheets is", book.nsheets
+#print "Worksheet name(s):", book.sheet_names()
+
+sh = book.sheet_by_index(0)
+#print sh.name, sh.nrows, sh.ncols
+filas = sh.nrows
+cols = sh.ncols
+for x in range(1,filas):
+	s = "";
+	for y in range(cols):
+		try:
+			s += str(sh.cell_value(rowx=x, colx=y)) + "|";
+		except:
+			s += ("") + "";
+	print (s);
+
